@@ -649,5 +649,12 @@ allCodeTags.forEach((codeTag) => {
 // Select all span tags and add tailwind classes to them
 const allSpanTags = document.querySelectorAll("span");
 allSpanTags.forEach((spanTag) => {
-  spanTag.classList.add("inline-block", "px-1", "bg-stone-200", "rounded");
+  spanTag.classList.add(
+    "inline-block",
+    "text-md",
+    "px-2",
+    "w-auto",
+    "bg-stone-200",
+    "rounded"
+  );
 });
