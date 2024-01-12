@@ -243,7 +243,7 @@ containerBtn4.addEventListener("click", (e) => {
 const eventFeaturesPara6 = document.createElement("p");
 eventFeaturesPara6.innerHTML = `<pre>
 
-Now, despite the second event listener being registered on the <span>&lt;button&gt;</span> element, the button <b>will not be bigger</b> anymore. Now let's understand <a href="../learn-advance-js/index.html#eventDelegationHeader" title="Event Delegation" class="text-md font-bold text-blue-400 hover:underline underline-offset-4 focus:underline hover:text-blue-600 focus:text-blue-600"><b>Event Delegation</b></a></pre>`;
+Now, despite the second event listener being registered on the <span>&lt;button&gt;</span> element, the button <b>will not be bigger</b> anymore. <p class="hidden md:inline">Now let's understand <a href="../learn-advance-js/index.html#eventDelegationHeader" title="Event Delegation" class="text-md font-bold text-blue-400 hover:underline underline-offset-4 focus:underline hover:text-blue-600 focus:text-blue-600" id="eventDelegationClick"><b>Event Delegation</b></a></p></pre>`;
 
 // Stop Immediate Propagation mechanism
 function stopImmediatePropagation(event, element) {
@@ -273,8 +273,12 @@ eventFeaturesContainer.append(
 );
 
 // Event Delegation Practice
+const eventDelegationContainer = document.createElement("div");
 const eventDelegationHeader = document.createElement("h5");
 const eventDelegationPara = document.createElement("p");
+const eventDelegationClick = document.getElementById("eventDelegationClick");
+
+eventDelegationContainer.setAttribute("class", "md:hidden");
 
 eventDelegationHeader.setAttribute(
   "class",
@@ -294,6 +298,8 @@ As stated above, With event delegation, instead of handling the click event on e
 Before going to see it in action we must know the difference between <span>target</span> and <span>currentTarget</span> properties. As mentonied in stack overflow, <span>target</span> is the element that received the event or triggered the event (e.g., the user clicked on), and <span>currentTarget</span> is the element that is handling the event or you can say the element that the event listener is attached to. Let's see an example:
 
 </pre>`;
+
+eventDelegationClick.addEventListener("click", (event) => {});
 
 const eventDelExmpCon = document.createElement("div");
 eventDelExmpCon.setAttribute("class", "w-full");
@@ -320,11 +326,13 @@ eventDelExmpCon.addEventListener("click", (event) => {
   event.target.style.backgroundColor = bgChange();
 });
 
-eventContainer.append(
+eventDelegationContainer.append(
   eventDelegationHeader,
   eventDelegationPara,
   eventDelExmpCon
 );
+
+eventContainer.append(eventDelegationContainer);
 
 // Event Interaction Practice
 // TODO: Show users a message when they're trying to close the tab/window
@@ -649,11 +657,5 @@ allCodeTags.forEach((codeTag) => {
 // Select all span tags and add tailwind classes to them
 const allSpanTags = document.querySelectorAll("span");
 allSpanTags.forEach((spanTag) => {
-  spanTag.classList.add(
-    "text-md",
-    "px-2",
-    "w-auto",
-    "bg-stone-200",
-    "rounded"
-  );
+  spanTag.classList.add("text-md", "px-2", "w-auto", "bg-stone-200", "rounded");
 });
