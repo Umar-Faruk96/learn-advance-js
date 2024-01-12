@@ -243,7 +243,7 @@ containerBtn4.addEventListener("click", (e) => {
 const eventFeaturesPara6 = document.createElement("p");
 eventFeaturesPara6.innerHTML = `<pre>
 
-Now, despite the second event listener being registered on the <span>&lt;button&gt;</span> element, the button <b>will not be bigger</b> anymore. Now let's understand <a href="#eventDelegationHeader" title="Event Delegation" class="text-md font-bold text-blue-400 hover:underline underline-offset-4 focus:underline hover:text-blue-600 focus:text-blue-600"><b>Event Delegation</b></a></pre>`;
+Now, despite the second event listener being registered on the <span>&lt;button&gt;</span> element, the button <b>will not be bigger</b> anymore. Now let's understand <a href="../index.html#eventDelegationHeader" title="Event Delegation" class="text-md font-bold text-blue-400 hover:underline underline-offset-4 focus:underline hover:text-blue-600 focus:text-blue-600"><b>Event Delegation</b></a></pre>`;
 
 // Stop Immediate Propagation mechanism
 function stopImmediatePropagation(event, element) {
