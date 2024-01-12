@@ -299,7 +299,9 @@ Before going to see it in action we must know the difference between <span>targe
 
 </pre>`;
 
-eventDelegationClick.addEventListener("click", (event) => {});
+eventDelegationClick.addEventListener("click", () => {
+  eventDelegationContainer.classList.remove("md:hidden");
+});
 
 const eventDelExmpCon = document.createElement("div");
 eventDelExmpCon.setAttribute("class", "w-full");
