@@ -650,7 +650,6 @@ allCodeTags.forEach((codeTag) => {
 const allSpanTags = document.querySelectorAll("span");
 allSpanTags.forEach((spanTag) => {
   spanTag.classList.add(
-    "inline-block",
     "text-md",
     "px-2",
     "w-auto",
